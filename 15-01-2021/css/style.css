@@ -34,8 +34,20 @@
     box-shadow: 5px 5px 5px #666;
 }
 
-.joke {
+.age {
     font-size: 48px;
     font-family: monospace;
     text-align: center;
+}
+
+.margin {
+    margin-top: 3px;
+    margin-bottom: 30px;
+}
+
+.txt {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    font-family: monospace;
+    font-size: 20px;
 }

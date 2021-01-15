@@ -11,9 +11,10 @@
 <body>
 
     <div class="container">
-        <!-- Заменить картинку чака на что-то другое -->
         <img style="border-radius: 10px;" class="magic-img" src="img/chuk.jpg" alt="">
-        <p class="joke">Здесь будет шутка</p>
+        <p class="age">Здесь будет age</p>
+        <p class="txt">Введите ваш возраст</p>
+        <input type="text" name="" id="" class="input-name margin">
         <button class="magic-button">Нажми меня!</button>
     </div>
 
@@ -21,14 +22,12 @@
         document.addEventListener('DOMContentLoaded', async function() {
 
             document.querySelector(".magic-button").addEventListener('click', async function() {
-                //Заменить адрес, куда обращаемся
-                //https://official-joke-api.appspot.com/jokes/random
-                let response = await fetch('https://official-joke-api.appspot.com/jokes/random');
+                let input = document.querySelector('.input-name')
+                let name = input.value;
+                let response = await fetch('https://api.agify.io?name=' + name + "&country_id=RU");
                 const jsonResponse = await response.json();
-                //Изменить перечень полей 
-                const joke = jsonResponse.setup;
-
-                document.querySelector(".joke").innerHTML = joke;
+                const age = jsonResponse.age;
+                document.querySelector(".age").innerHTML = age;
             })
         });
     </script>
